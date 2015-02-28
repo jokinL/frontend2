@@ -1,0 +1,66 @@
+/*COLOR*/
+gris = #f0f0f0
+grisOscuro = #E4E4E4
+grisOscuroSombra = #C8C8C8
+grisNav = #656565
+newGreen = #1abb9c
+/*
+############################################################
+############################################################
+BODY
+############################################################
+############################################################
+*/
+body
+	background-color gris
+/*
+############################################################
+############################################################
+HEADER
+############################################################
+############################################################
+*/
+header
+	background-color newGreen
+	padding 1em
+	overflow auto
+	figure
+		float left
+		a
+			padding-right 1em
+			img
+				width 50px
+	.titular
+		float left
+		h1
+			font-size 1em
+			font-weight normal
+			color white
+/*
+############################################################
+############################################################
+HEADER
+############################################################
+############################################################
+*/
+nav
+	background-color grisOscuro
+	border-top solid 3px grisOscuroSombra
+	ul
+		margin 0
+		padding 0
+		li
+			list-style none
+			display inline-block
+			a
+				display block
+				padding 1.5em
+				text-decoration none
+				text-transform uppercase
+				font-size 0.7em
+				color grisNav
+				&:hover
+					background-color grisOscuroSombra
+			&:first-child
+				a
+					padding-left 1.5em
