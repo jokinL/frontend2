@@ -1,10 +1,18 @@
+/**FONT FAMILY*/
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700')
+openSans ='Open Sans', sans-serif
+
 /*COLOR*/
 gris = #f0f0f0
 grisOscuro = #E4E4E4
 grisOscuroSombra = #C8C8C8
 grisNav = #656565
 newGreen = #1abb9c
+greenBtn = #15A388
+greenOscuro = #1B5A4E
+amarilloBtn = #F1BF0F
 
+/*MIXINS*/
 contentPadding()
 	padding 1em
 
@@ -16,6 +24,7 @@ BODY
 ############################################################
 */
 body
+	font-family openSans
 	background-color gris
 /*
 ############################################################
@@ -26,11 +35,12 @@ HEADER
 */
 header
 	background-color newGreen
-	padding 1em
-	overflow auto
 	position fixed
 	width 100%
-	border-bottom 3px solid rgba(200, 200, 200, 0.5);
+	box-shadow 0 3px 0 rgba(0, 0, 0, 0.09)
+	.content
+		padding 1em
+		overflow auto
 	figure
 		float left
 		a
@@ -42,20 +52,56 @@ header
 	###############################*/
 	.titular
 		float left
+		width 55%
 		h1
 			font-size 1em
 			font-weight normal
 			color white
+			text-transform none
+			margin-top: 17px;
+			strong
+				text-transform uppercase
+		// .filtro
+		// 	float left
+		// 	text-decoration none
+		// 	text-transform uppercase
+		// 	color greenBtn
+		.publicar
+			background-color amarilloBtn
+			color white
+			padding 0.5em 0.7em
+			text-decoration none
+			text-transform uppercase
+			font-size 10px
+			position absolute
+			top 36px
+			right 77px
 	/*###############################
 	AVATAR
 	###############################*/
 	.usuario
-		float right
+		position relative
+		figure
+			float none
+			position absolute
+			right 24px
+			top 12px
+			z-index 1
 		.avatar
+			width 40px
 			img
-				width 40%
+				width 100%
 				border-radius 50%
-		
+		a
+			&.flechita
+				text-decoration none
+				background-color amarilloBtn
+				color white
+				font-weight 700
+				padding 0.2em 0.5em 0.2em 0.8em
+				position absolute
+				top 18px
+				right 0px
 /*
 ############################################################
 ############################################################
@@ -64,11 +110,15 @@ NAV
 ############################################################
 */
 nav
-	background-color grisOscuro
-	padding-top: 91px;
+	background-color greenOscuro
+	padding-top: 87px;
 	ul
 		margin 0
 		padding 0
+		overflow-x auto
+		height 49px
+		white-space nowrap
+		
 		li
 			list-style none
 			display inline-block
@@ -78,7 +128,7 @@ nav
 				text-decoration none
 				text-transform uppercase
 				font-size 0.7em
-				color grisNav
+				color white
 				&:hover
 					background-color grisOscuroSombra
 			&:first-child
@@ -100,3 +150,4 @@ section
 		contentPadding()
 		background-color white
 		border-bottom solid 3px grisOscuro
+		margin-bottom 1em
