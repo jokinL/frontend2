@@ -3,6 +3,5 @@ HTML5, CSS3 y Javascript es sólo el inicio. También Responsive Design, framewo
 
 /*EXTRA*/
 - Google Fonts
-	icomoon.io
 - Icomoon
-	icomoon.io
+- JQuery
