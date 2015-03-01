@@ -13,16 +13,16 @@ miniFont = 0.8em
 	font-style: normal;
 
 /*COLOR*/
-gris = #f0f0f0
-grisOscuro = #E4E4E4
-grisOscuroSombra = #C8C8C8
-grisNav = #656565
-newGreen = #1abb9c
-greenBtn = #15A388
-greenOscuro = #1B5A4E
 amarilloBtn = #F1BF0F
 amarilloSombra = #A98810
 colorFuente = #484848
+greenBtn = #15A388
+greenOscuro = #1B5A4E
+gris = #f0f0f0
+grisNav = #656565
+grisOscuro = #E4E4E4
+grisOscuroSombra = #C8C8C8
+newGreen = #1abb9c
 rojo = #E74C3C
 
 /*MIXINS*/
@@ -37,8 +37,8 @@ BODY
 ############################################################
 */
 body
-	font-family openSans
 	background-color gris
+	font-family openSans
 	a
 		
 /*
@@ -50,15 +50,14 @@ HEADER
 */
 header
 	background-color newGreen
-	position fixed
-	z-index 2
-	width 100%
 	box-shadow 0 3px 0 rgba(0, 0, 0, 0.09)
+	position fixed
+	width 100%
+	z-index 2
 	.content
-		padding 1em
 		overflow auto
+		padding 1em
 	figure
-		float left
 		a
 			padding-right 1em
 			img
@@ -67,30 +66,29 @@ header
 	TITULAR
 	###############################*/
 	.titelContent
-		float left
 		width 55%
 		h1
+			color white
 			font-size 1em
 			font-weight normal
-			color white
-			text-transform none
-			margin-top 9px
 			margin-bottom 0
+			margin-top 9px
+			text-transform none
 			strong
 				text-transform uppercase
 		.publish
 			background-color amarilloBtn
-			color white
-			padding 0.5em 1.6em 0.5em 0.7em
-			text-decoration none
-			text-transform uppercase
-			font-size 10px
-			position absolute
-			top 26px
-			right 70px
 			border-bottom solid 3px amarilloSombra
 			border-bottom-left-radius 5px
 			border-bottom-right-radius 0px
+			color white
+			font-size 10px
+			padding 0.5em 1.6em 0.5em 0.7em
+			position absolute
+			right 70px
+			text-decoration none
+			text-transform uppercase
+			top 26px
 			
 	/*###############################
 	AVATAR
@@ -106,20 +104,20 @@ header
 		.avatar
 			width 40px
 			img
-				width 100%
 				border-radius 50%
+				width 100%
 		a
 			&.arrow
-				text-decoration none
 				background-color amarilloBtn
+				border-bottom-right-radius: 5px;
+				border-bottom: solid 3px amarilloSombra;
 				color white
 				font-weight 700
 				padding 0.2em 0.5em 0.2em 0.9em
 				position absolute
-				top 8px
 				right 0px
-				border-bottom: solid 3px amarilloSombra;
-				border-bottom-right-radius: 5px;
+				text-decoration none
+				top 8px
 /*
 ############################################################
 ############################################################
@@ -131,23 +129,23 @@ nav
 	background-color greenOscuro
 	padding-top: 77px;
 	ul
-		margin 0
-		padding 0
-		overflow-x auto
 		height 49px
-		white-space nowrap
+		margin 0
+		overflow-x auto
+		padding 0
 		position relative
+		white-space nowrap
 		
 		li
-			list-style none
 			display inline-block
+			list-style none
 			a
+				color white
 				display block
+				font-size 0.7em
 				padding 1.5em
 				text-decoration none
 				text-transform uppercase
-				font-size 0.7em
-				color white
 				&:hover
 					background-color grisOscuroSombra
 			&:first-child
@@ -188,35 +186,34 @@ section
 			.content
 				contentPadding(1em)
 				h2
+					font-size 1.2em
+					line-height 1
 					margin 0px
 					margin-bottom 0.4em
-					line-height 1
-					font-size 1.2em
 					a
-						text-decoration none
 						color colorFuente
+						text-decoration none
 				p
 					margin 0
 					&.fecha
-						font-size miniFont
-						float right
-						margin-top -23px
 						color rgba(black 0.4)
-					&.autor
-						margin-bottom 0.5em
 						font-size miniFont
+						margin-top -23px
+					&.autor
+						font-size miniFont
+						margin-bottom 0.5em
 						a
-							text-decoration none
 							color newGreen
+							text-decoration none
 				.tag
 					background-color newGreen
 					border-radius 3px
 					color white
-					text-transform uppercase
-					font-size 10px
-					text-decoration none
-					padding 0.3em 0.5em
 					display inline-block
+					font-size 10px
+					padding 0.3em 0.5em
+					text-decoration none
+					text-transform uppercase
 		/*###############################
 		ACTIONS
 		###############################*/
@@ -229,32 +226,31 @@ section
 				.down
 				.total
 					font-size miniFont
-					text-decoration none
 					margin 0 0.5em
+					text-decoration none
 				.down
 				.up
 					&:before
-						font-family "icomoon"
 						content "\e600"
+						font-family "icomoon"
 						margin-right 0.5em
 				.down
 					margin-left 0.5em
 					&:before
-						transform rotate(-180deg)
 						display inline-block
+						transform rotate(-180deg)
 			div
 				float left
 				margin 0 1em 0 0
 			.data
-				float right
 				margin 0
 				.comments
 					background-color rojo
-					padding 0.3em 0.5em
-					color white
-					text-decoration none
-					font-size 0.7em
 					border-radius 3px
+					color white
+					font-size 0.7em
+					padding 0.3em 0.5em
+					text-decoration none
 /*
 ############################################################
 ############################################################
@@ -264,12 +260,12 @@ FOOTER
 */
 footer
 	background-color newGreen
-	font-size 0.8em
-	padding-top 1em
-	padding-bottom 1em
-	text-align center
-	color rgba(white 0.5)
 	clear both
+	color rgba(white 0.5)
+	font-size 0.8em
+	padding-bottom 1em
+	padding-top 1em
+	text-align center
 /*
 #######################################################################################
 #######################################################################################
