@@ -161,16 +161,21 @@ SECTION
 ############################################################
 */
 section
-	contentPadding(1em)
+	padding-top 1em
+	padding-bottom 1em
+	&.container
+		padding-left 0
 	/*###############################
 	SECTION
 	###############################*/
 	article
-		background-color white
-		border-bottom solid 3px grisOscuro
-		margin-bottom 1em
-		&:last-child
-			margin-bottom 0
+		&.col-md-3
+			padding-right 0
+		.articleContent
+			background-color white
+			border-bottom solid 3px grisOscuro
+			margin-bottom 1em
+			padding-right 0
 		/*###############################
 		DESCRIPTION
 		###############################*/
@@ -264,6 +269,7 @@ footer
 	padding-bottom 1em
 	text-align center
 	color rgba(white 0.5)
+	clear both
 /*
 #######################################################################################
 #######################################################################################
@@ -274,7 +280,7 @@ RESPONSIVE DESING
 #######################################################################################
 #######################################################################################
 */
-@media screen and (min-width: 768px)
+// @media screen and (min-width: 768px)
 	/*
 	############################################################
 	############################################################
@@ -282,9 +288,9 @@ RESPONSIVE DESING
 	############################################################
 	############################################################
 	*/
-	section
-		article
-			display inline-block
-			width 49%
-			&:nth-child(odd)
-				margin-right 1.5%
+	// section
+		//article
+			//display inline-block
+			//width 49%
+			//&:nth-child(odd)
+				//margin-right 1.5%
