@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/general.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="js/funcionalidad.js"></script>
 	<title>Launch</title>
 </head>
 <body>
@@ -44,6 +46,21 @@
 			<li><a href="#">Stylus</a></li>
 		</ul>
 	</nav>
+	<form id="addPost" class="container" action="">
+		<p class="col-sm-3">
+			<label for="titulo">Título</label>
+			<input placeholder="Ingrese un título" id="titulo" type="text" name="titulo">
+		</p>
+		<p class="col-sm-3">
+			<label for="autor">Autor</label>
+			<input placeholder="Ingrese un autor" id="auto" type="text" name="autor">
+		</p>
+		<p class="col-sm-3">
+			<label for="tag">Tag</label>
+			<input placeholder="Ingrese unos tags" id="tag" type="text" name="tag">
+		</p>
+		<p class="col-sm-3"><input value="publish" type="submit"></p>
+	</form>
 	<section class="container">
 		<article class="col-md-3 col-sm-6">
 			<div class="articleContent">
