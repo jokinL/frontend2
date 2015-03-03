@@ -1,77 +1,223 @@
 <!DOCTYPE html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <title>Puls3</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/general.css" />
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/estilos.css">
+	<script src="/js/vendor/jquery-2.0.3.js"></script>
+    <script src="/js/vendor/underscore.js"></script>
+    <script src="/js/vendor/backbone.js"></script>
+    <script src="/js/vendor/swig.js"></script>
 
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <script src="js/vendor/jquery-1.9.1.min.js"></script>
-        <script src="js/vendor/underscore.js"></script>
-        <script src="js/vendor/backbone.js"></script>
-    </head>
-    <body>
+    <script src="/js/vendor/socket.io.js"></script>
 
-        <header>
-            <figure id="header_logo">
-                <a href=""><img src="img/logo.png" alt="logo"></a>
-            </figure>
-            <div id="header_titulo">
-                <h2>Puls3 - Dolor Sit amet</h2>
-                <nav>
-                    <ul>
-                        <a href=""><li>Home</li></a>
-                        <a href="https://github.com/agreencow/puls3"><li>GitHub</li></a>
-                    </ul>
-                </nav>
-            </div>
-            <figure id="header_user">
-               <a href=""><img src="img/user.jpg"></a> 
-            </figure>
-        </header>   
+    <script src="/js/vendor/neon.js"></script>
+    <script src="/js/vendor/CustomEvent.js"></script>
+    <script src="/js/vendor/CustomEventSupport.js"></script>
+    <script src="/js/vendor/PonyExpress.js"></script>    
 
-        <section id="contenido">
+    <script src="/js/init.js"></script>
+    <script type="text/javascript" src="/js/backbone/models/article.js"></script>
+    <script src="/js/main.js"></script>
 
-            <aside>
-                <div id="aside_header">
-                    <span aria-hidden="true" class="icon-arrow-down"></span>
-                    <h3>Alorium menu plus</h3>
-                </div>
-                <div id="aside_body">
-                    <p>
-                       Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave feeding iride et serpens. Pestilentia, shaun ofthe dead scythe animated corpses ipsa screams. Pestilentia est plague haec decaying ambulabat mortuos. Sicut zeder apathetic malus voodoo. 
-                    </p>
-                </div>
-            </aside>
 
-            {% for post in posts %}
-                <article class="contenido_item">
-                    <figure>
-                        <a href="#"><img src="{{ post.image }}"></a>
-                    </figure>
-                    <div class="item_info">
-                        <h2>{{ post.title }}</h2>
-                        <p class="item_posted">Posted by <a href="#">{{ post.user }}</a></p>
-                        <span aria-hidden="true" class="icon-heart-2"></span>
-                    </div>
-                    <div class="item_extra">
-                        <p class ="extra_tag">{{ post.tag }}</p>
-                        <div class="extra_likes">
-                            <a class="likes_up" href="#"><span aria-hidden="true" class="icon-arrow-up"></span></a>
-                            <div class="likes_numero">{{ post.votes }}</div>
-                            <a class="likes_down" href="#"><span aria-hidden="true" class="icon-arrow-down"></span></a>
-                        </div>
-                    </div>
-                </article>
-            {% endfor %}
-
-        </section>
-
-        <script src="js/main.js"></script>
-    </body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="/js/funcionalidad.js"></script>
+	<title>Launch</title>
+</head>
+<body>
+	<header>
+		<div class="content">
+			<figure class="pull-left">
+				<a href="#">
+					<img src="/imgs/logo.png" alt="Launch" />
+				</a>
+			</figure>
+			<div class="titelContent pull-left">
+				<h1>
+					<strong>Launch</strong>Web
+				</h1>
+				<div>
+					<a class="publish" href="#">
+						Publicar
+					</a>
+				</div>
+			</div>
+			<div class="user">
+				<figure class="avatar">
+					<img src="/imgs/avatar.jpg" alt="freddier" />
+				</figure>
+				<a class="arrow" href="#">X</a>
+			</div><!--//titular-->
+		</div><!--//content--> 
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#">Python</a></li>
+			<li><a href="#">HTML5</a></li>
+			<li><a href="#">Javascript</a></li>
+			<li><a href="#">Django</a></li>
+			<li><a href="#">CSS3</a></li>
+			<li><a href="#">LESS</a></li>
+			<li><a href="#">Stylus</a></li>
+		</ul>
+	</nav>
+	<form id="addPost" class="container" action="">
+		<p class="col-sm-3">
+			<label for="titulo">Título</label>
+			<input placeholder="Ingrese un título" id="titulo" type="text" name="titulo">
+		</p>
+		<p class="col-sm-3">
+			<label for="autor">Autor</label>
+			<input placeholder="Ingrese un autor" id="auto" type="text" name="autor">
+		</p>
+		<p class="col-sm-3">
+			<label for="tag">Tag</label>
+			<input placeholder="Ingrese unos tags" id="tag" type="text" name="tag">
+		</p>
+		<p class="col-sm-3"><input value="publish" type="submit"></p>
+	</form>
+	<section class="container">
+		<article class="col-md-3 col-sm-6">
+			<div class="articleContent">
+				<div class="description">
+					<figure>
+						<a href="#"><img src="/imgs/foto.jpg" /></a>
+					</figure>
+					<div class="content">
+						<h2><a href="#">Neutralidad de la red</a></h2>
+						<p class="autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
+						<a class="tag" href="#">CSS3</a>
+					</div>
+				</div><!--//description-->
+				<div class="actions">
+					<div class="votes">
+						<a class="up" href="#">Up</a>
+						<span class="total">156</span>
+						<a class="down" href="#">Down</a>
+					</div>
+					<div class="data pull-right">
+						<a class="comments" href="#">
+							10
+						</a>
+					</div>
+				</div><!--//actions-->
+			</div><!--//articleContent-->
+		</article>
+		<article class="col-md-3 col-sm-6">
+			<div class="articleContent">
+				<div class="description">
+					<figure>
+						<a href="#"><img src="/imgs/foto.jpg" /></a>
+					</figure>
+					<div class="content">
+						<h2><a href="#">Neutralidad de la red</a></h2>
+						<p class="autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
+						<a class="tag" href="#">CSS3</a>
+					</div>
+				</div><!--//description-->
+				<div class="actions">
+					<div class="votes">
+						<a class="up" href="#">Up</a>
+						<span class="total">156</span>
+						<a class="down" href="#">Down</a>
+					</div>
+					<div class="data pull-right">
+						<a class="comments" href="#">
+							10
+						</a>
+					</div>
+				</div><!--//actions-->
+			</div><!--//articleContent-->
+		</article>
+		<article class="col-md-3 col-sm-6">
+			<div class="articleContent">
+				<div class="description">
+					<figure>
+						<a href="#"><img src="/imgs/foto.jpg" /></a>
+					</figure>
+					<div class="content">
+						<h2><a href="#">Neutralidad de la red</a></h2>
+						<p class="autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
+						<a class="tag" href="#">CSS3</a>
+					</div>
+				</div><!--//description-->
+				<div class="actions">
+					<div class="votes">
+						<a class="up" href="#">Up</a>
+						<span class="total">156</span>
+						<a class="down" href="#">Down</a>
+					</div>
+					<div class="data pull-right">
+						<a class="comments" href="#">
+							10
+						</a>
+					</div>
+				</div><!--//actions-->
+			</div><!--//articleContent-->
+		</article>
+		<article class="col-md-3 col-sm-6">
+			<div class="articleContent">
+				<div class="description">
+					<figure>
+						<a href="#"><img src="/imgs/foto.jpg" /></a>
+					</figure>
+					<div class="content">
+						<h2><a href="#">Neutralidad de la red</a></h2>
+						<p class="autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
+						<a class="tag" href="#">CSS3</a>
+					</div>
+				</div><!--//description-->
+				<div class="actions">
+					<div class="votes">
+						<a class="up" href="#">Up</a>
+						<span class="total">156</span>
+						<a class="down" href="#">Down</a>
+					</div>
+					<div class="data pull-right">
+						<a class="comments" href="#">
+							10
+						</a>
+					</div>
+				</div><!--//actions-->
+			</div><!--//articleContent-->
+		</article>
+		<article class="col-md-3 col-sm-6">
+			<div class="articleContent">
+				<div class="description">
+					<figure>
+						<a href="#"><img src="/imgs/foto.jpg" /></a>
+					</figure>
+					<div class="content">
+						<h2><a href="#">Neutralidad de la red</a></h2>
+						<p class="autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
+						<a class="tag" href="#">CSS3</a>
+					</div>
+				</div><!--//description-->
+				<div class="actions">
+					<div class="votes">
+						<a class="up" href="#">Up</a>
+						<span class="total">156</span>
+						<a class="down" href="#">Down</a>
+					</div>
+					<div class="data pull-right">
+						<a class="comments" href="#">
+							10
+						</a>
+					</div>
+				</div><!--//actions-->
+			</div><!--//articleContent-->
+		</article>
+	</section>
+	<footer>
+		Powered by Tesokdesign.es 2015
+	</footer>
+</body>
 </html>
