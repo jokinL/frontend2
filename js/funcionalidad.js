@@ -1,8 +1,8 @@
 // On load
 $(function(){
 	// Open/Close form
-	$(".publish").on("click", viewform);
-	$("#addPost").on("submit", processForm);
+	$("#js-publish").on("click", viewform);
+	$("#js-addPost").on("submit", processForm);
 });
 /*
 #####################################
@@ -11,7 +11,7 @@ FUNCTIONS
 */
 // Open/Close form to publish Post
 function viewform(){
-	$("#addPost").slideToggle();
+	$("#js-addPost").slideToggle();
 }
 // Process form
 function processForm(event){

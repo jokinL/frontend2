@@ -1,0 +1,328 @@
+/**FONT FAMILY*/
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@openSans: 'Open Sans', sans-serif;
+@miniFont: 0.8em;
+@font-face{
+	font-family: 'icomoon';
+	src:url('../iconfonts/icomoon.eot?-mtf7t2');
+	src:url('../iconfonts/icomoon.eot?#iefix-mtf7t2') format('embedded-opentype'),
+		url('../iconfonts/icomoon.woff?-mtf7t2') format('woff'),
+		url('../iconfonts/icomoon.ttf?-mtf7t2') format('truetype'),
+		url('../iconfonts/icomoon.svg?-mtf7t2#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/*COLOR*/
+@amarilloBtn: 			#F1BF0F;
+@amarilloSombra: 		#A98810;
+@colorFuente: 			#484848;
+@greenBtn: 				#15A388;
+@greenOscuro: 			#1B5A4E;
+@gris: 					#f0f0f0;
+@grisNav: 				#656565;
+@grisOscuro: 			#E4E4E4;
+@grisOscuroSombra: 		#C8C8C8;
+@newGreen: 				#1abb9c;
+@rojo: 					#E74C3C;
+
+/*MIXINS*/
+#contentPadding(@var){
+	padding: @var;
+}
+
+/*
+############################################################
+############################################################
+BODY
+############################################################
+############################################################
+*/
+body{
+	background-color: @gris;
+	font-family: @openSans;
+}
+
+/*
+############################################################
+############################################################
+HEADER
+############################################################
+############################################################
+*/
+.header{
+	background-color: @newGreen;
+	box-shadow: 0 3px 0 rgba(0, 0, 0, 0.09);
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+.header__content{
+	overflow: auto;
+	padding: 1em;
+}
+.header__content--image{
+	a{
+		padding-right: 1em;
+		img{
+			width: 40px;
+		}
+	}
+}
+/*###############################
+TITULAR
+###############################*/
+.header__content--title{
+	width: 55%;
+	.title{
+		color: white;
+		font-size: 1em;
+		font-weight: normal;
+		margin-bottom: 0;
+		margin-top: 9px;
+		text-transform: none;
+		strong{
+			text-transform: uppercase;
+		}
+	}
+	.header__content--publish{
+		background-color: @amarilloBtn;
+		border-bottom: solid 3px @amarilloSombra;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 0px;
+		color: white;
+		font-size: 10px;
+		padding: 0.5em 1.6em 0.5em 0.7em;
+		position: absolute;
+		right: 70px;
+		text-decoration: none;
+		text-transform: uppercase;
+		top: 26px;
+	}
+}	
+/*###############################
+AVATAR
+###############################*/
+.header__content--user{
+	position: relative;
+	figure{
+		float: none;
+		position: absolute;
+		right: 24px;
+		top: 2px;
+		z-index: 1;
+	}
+	.header__content--avatar{
+		width: 40px;
+		img{
+			border-radius: 50%;
+			width: 100%;
+		}
+	}
+	.arrow{
+		background-color: @amarilloBtn;
+		border-bottom-right-radius: 5px;
+		border-bottom: solid 3px @amarilloSombra;
+		color: white;
+		font-weight: 700;
+		padding: 0.2em 0.5em 0.2em 0.9em;
+		position: absolute;
+		right: 0px;
+		text-decoration: none;
+		top: 8px;
+	}
+}
+/*
+############################################################
+############################################################
+NAV
+############################################################
+############################################################
+*/
+.nav{
+	background-color: @greenOscuro;
+	padding-top: 68px;
+}
+.nav__content{
+	margin: 0;
+	overflow-x: auto;
+	padding: 0;
+	position: relative;
+	white-space: nowrap;
+}
+.nav__content--item{
+	display: inline-block;
+	list-style: none;
+	a{
+		color: white;
+		display: block;
+		font-size: 0.7em;
+		padding: 1.5em;
+		text-decoration: none;
+		text-transform: uppercase;
+		&:hover{
+			background-color: @grisOscuroSombra;
+		}
+	}
+	&:first-child{
+		a{
+			padding-left: 1.5em;
+		}
+	}
+}
+
+/*
+############################################################
+############################################################
+FORM
+############################################################
+############################################################
+*/
+.addPost{
+	display: none;
+	#contentPadding(1em);
+	.addPost__label{
+		width: 60px;
+	}
+}
+/*
+############################################################
+############################################################
+SECTION
+############################################################
+############################################################
+*/
+.section{
+	padding-top: 1em;
+	padding-bottom: 1em;
+	&.container{
+		padding-left: 0;
+	}
+	/*###############################
+	ARTICLE
+	###############################*/
+	.article{
+		&.col-md-3{
+			padding-right: 0;
+		}
+		.article__content{
+			background-color: white;
+			border-bottom: solid 3px @grisOscuro;
+			margin-bottom: 1em;
+			padding-right: 0;
+		}
+		/*###############################
+		DESCRIPTION
+		###############################*/
+		.article__content--description{
+			figure{
+				overflow: hidden;
+				height: 160px;
+				img{
+					width: 100%;
+				}
+			}
+			.article__content--info{
+				#contentPadding(1em);
+				.article--title{
+					font-size: 1.2em;
+					line-height: 1;
+					margin: 0px;
+					margin-bottom: 0.4em;
+					a{
+						color: @colorFuente;
+						text-decoration: none;
+					}
+				}
+				p{
+					margin: 0;
+					&.article--fecha{
+						color: rgba(0,0,0, 0.4);
+						font-size: @miniFont;
+						margin-top: -23px;
+					}
+					&.article--autor{
+						font-size: @miniFont;
+						margin-bottom: 0.5em;
+						a{
+							color: @newGreen;
+							text-decoration: none;
+						}
+					}
+				}
+				.article--tag{
+					background-color: @newGreen;
+					border-radius: 3px;
+					color: white;
+					display: inline-block;
+					font-size: 10px;
+					padding: 0.3em 0.5em;
+					text-decoration: none;
+					text-transform: uppercase;
+				}
+			}
+		}
+		/*###############################
+		ACTIONS
+		###############################*/
+		.article__content--actions{
+			background-color: lighten(@grisOscuro, 20%);
+			overflow: auto;
+			#contentPadding(0.5em);
+			.article__content--votes{
+				float: left;
+				margin: 0 1em 0 0;
+				.article__content--up,
+				.article__content--down,
+				.article__content--total{
+					font-size: @miniFont;
+					margin: 0 0.5em;
+					text-decoration: none;
+				}
+				.article__content--down,
+				.article__content--up{
+					&:before{
+						content: "\e600";
+						font-family: "icomoon";
+						margin-right: 0.5em;
+					}
+				}
+				.article__content--down{
+					margin-left: 0.5em;
+					&:before{
+						display: inline-block;
+						transform: rotate(-180deg);
+					}
+				}
+			}
+			.article__content--data{
+				margin: 0;
+				float: right;
+				margin: 0 0.5em 0 0;
+				.article__content--comments{
+					background-color: @rojo;
+					border-radius: 3px;
+					color: white;
+					font-size: 0.7em;
+					padding: 0.3em 0.5em;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+/*
+############################################################
+############################################################
+FOOTER
+############################################################
+############################################################
+*/
+footer{
+	background-color: @newGreen;
+	clear: both;
+	color: rgba(255,255,255, 0.5);
+	font-size: 0.8em;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	text-align: center;
+}

@@ -10,194 +10,204 @@
 	<title>Launch</title>
 </head>
 <body>
-	<header>
-		<div class="content">
-			<figure class="pull-left">
+	<header class="header">
+		<div class="header__content">
+			<figure class="header__content--image pull-left">
 				<a href="#">
 					<img src="imgs/logo.png" alt="Launch" />
 				</a>
 			</figure>
-			<div class="titelContent pull-left">
-				<h1>
+			<div class="header__content--title pull-left">
+				<h1 class="title">
 					<strong>Launch</strong>Web
 				</h1>
 				<div>
-					<a class="publish" href="#">
+					<a class="header__content--publish" id="js-publish" href="#">
 						Publicar
 					</a>
 				</div>
 			</div>
-			<div class="user">
-				<figure class="avatar">
+			<div class="header__content--user">
+				<figure class="header__content--avatar">
 					<img src="imgs/avatar.jpg" alt="freddier" />
 				</figure>
 				<a class="arrow" href="#">X</a>
 			</div><!--//titular-->
 		</div><!--//content--> 
 	</header>
-	<nav>
-		<ul>
-			<li><a href="#">Python</a></li>
-			<li><a href="#">HTML5</a></li>
-			<li><a href="#">Javascript</a></li>
-			<li><a href="#">Django</a></li>
-			<li><a href="#">CSS3</a></li>
-			<li><a href="#">LESS</a></li>
-			<li><a href="#">Stylus</a></li>
+	<nav class="nav">
+		<ul class="nav__content">
+			<li class="nav__content--item"><a href="#">Python</a></li>
+			<li class="nav__content--item"><a href="#">HTML5</a></li>
+			<li class="nav__content--item"><a href="#">Javascript</a></li>
+			<li class="nav__content--item"><a href="#">Django</a></li>
+			<li class="nav__content--item"><a href="#">CSS3</a></li>
+			<li class="nav__content--item"><a href="#">LESS</a></li>
+			<li class="nav__content--item"><a href="#">Stylus</a></li>
 		</ul>
 	</nav>
-	<form id="addPost" class="container" action="">
+	<form class="addPost" id="js-addPost" class="container" action="">
 		<p class="col-sm-3">
-			<label for="titulo">Título</label>
+			<label class="addPost__label" for="titulo">Título</label>
 			<input placeholder="Ingrese un título" id="titulo" type="text" name="titulo">
 		</p>
 		<p class="col-sm-3">
-			<label for="autor">Autor</label>
+			<label class="addPost__label" for="autor">Autor</label>
 			<input placeholder="Ingrese un autor" id="auto" type="text" name="autor">
 		</p>
 		<p class="col-sm-3">
-			<label for="tag">Tag</label>
+			<label class="addPost__label" for="tag">Tag</label>
 			<input placeholder="Ingrese unos tags" id="tag" type="text" name="tag">
 		</p>
 		<p class="col-sm-3"><input value="publish" type="submit"></p>
 	</form>
-	<section class="container">
-		<article class="col-md-3 col-sm-6">
-			<div class="articleContent">
-				<div class="description">
+	
+	<section class="section  container">
+		<article class="article  col-md-3  col-sm-6">
+			<div class="article__content">
+				<div class="article__content--description">
 					<figure>
 						<a href="#"><img src="imgs/foto.jpg" /></a>
 					</figure>
-					<div class="content">
-						<h2><a href="#">Neutralidad de la red</a></h2>
-						<p class="autor">Por <a href="#">Diana Reyes</a></p>
-						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
-						<a class="tag" href="#">CSS3</a>
+					<div class="article__content--info  content">
+						<h2 class="article--title"><a href="#">Neutralidad de la red</a></h2>
+						<p class="article--autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="article--fecha  pull-right">Hace <strong>20</strong> min</p>
+						<a class="article--tag" href="#">CSS3</a>
 					</div>
 				</div><!--//description-->
-				<div class="actions">
-					<div class="votes">
-						<a class="up" href="#">Up</a>
-						<span class="total">156</span>
-						<a class="down" href="#">Down</a>
+				<div class="article__content--actions">
+					<div class="article__content--votes">
+						<a class="article__content--up" href="#">Up</a>
+						<span class="article__content--total">156</span>
+						<a class="article__content--down" href="#">Down</a>
 					</div>
-					<div class="data pull-right">
-						<a class="comments" href="#">
+					<div class="article__content--data  pull-right">
+						<a class="article__content--comments" href="#">
 							10
 						</a>
 					</div>
 				</div><!--//actions-->
 			</div><!--//articleContent-->
 		</article>
-		<article class="col-md-3 col-sm-6">
-			<div class="articleContent">
-				<div class="description">
+
+		<article class="article  col-md-3  col-sm-6">
+			<div class="article__content">
+				<div class="article__content--description">
 					<figure>
 						<a href="#"><img src="imgs/foto.jpg" /></a>
 					</figure>
-					<div class="content">
-						<h2><a href="#">Neutralidad de la red</a></h2>
-						<p class="autor">Por <a href="#">Diana Reyes</a></p>
-						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
-						<a class="tag" href="#">CSS3</a>
+					<div class="article__content--info  content">
+						<h2 class="article--title"><a href="#">Neutralidad de la red</a></h2>
+						<p class="article--autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="article--fecha  pull-right">Hace <strong>20</strong> min</p>
+						<a class="article--tag" href="#">CSS3</a>
 					</div>
 				</div><!--//description-->
-				<div class="actions">
-					<div class="votes">
-						<a class="up" href="#">Up</a>
-						<span class="total">156</span>
-						<a class="down" href="#">Down</a>
+				<div class="article__content--actions">
+					<div class="article__content--votes">
+						<a class="article__content--up" href="#">Up</a>
+						<span class="article__content--total">156</span>
+						<a class="article__content--down" href="#">Down</a>
 					</div>
-					<div class="data pull-right">
-						<a class="comments" href="#">
+					<div class="article__content--data  pull-right">
+						<a class="article__content--comments" href="#">
 							10
 						</a>
 					</div>
 				</div><!--//actions-->
 			</div><!--//articleContent-->
 		</article>
-		<article class="col-md-3 col-sm-6">
-			<div class="articleContent">
-				<div class="description">
+
+		<article class="article  col-md-3  col-sm-6">
+			<div class="article__content">
+				<div class="article__content--description">
 					<figure>
 						<a href="#"><img src="imgs/foto.jpg" /></a>
 					</figure>
-					<div class="content">
-						<h2><a href="#">Neutralidad de la red</a></h2>
-						<p class="autor">Por <a href="#">Diana Reyes</a></p>
-						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
-						<a class="tag" href="#">CSS3</a>
+					<div class="article__content--info  content">
+						<h2 class="article--title"><a href="#">Neutralidad de la red</a></h2>
+						<p class="article--autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="article--fecha  pull-right">Hace <strong>20</strong> min</p>
+						<a class="article--tag" href="#">CSS3</a>
 					</div>
 				</div><!--//description-->
-				<div class="actions">
-					<div class="votes">
-						<a class="up" href="#">Up</a>
-						<span class="total">156</span>
-						<a class="down" href="#">Down</a>
+				<div class="article__content--actions">
+					<div class="article__content--votes">
+						<a class="article__content--up" href="#">Up</a>
+						<span class="article__content--total">156</span>
+						<a class="article__content--down" href="#">Down</a>
 					</div>
-					<div class="data pull-right">
-						<a class="comments" href="#">
+					<div class="article__content--data  pull-right">
+						<a class="article__content--comments" href="#">
 							10
 						</a>
 					</div>
 				</div><!--//actions-->
 			</div><!--//articleContent-->
 		</article>
-		<article class="col-md-3 col-sm-6">
-			<div class="articleContent">
-				<div class="description">
+
+		<article class="article  col-md-3  col-sm-6">
+			<div class="article__content">
+				<div class="article__content--description">
 					<figure>
 						<a href="#"><img src="imgs/foto.jpg" /></a>
 					</figure>
-					<div class="content">
-						<h2><a href="#">Neutralidad de la red</a></h2>
-						<p class="autor">Por <a href="#">Diana Reyes</a></p>
-						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
-						<a class="tag" href="#">CSS3</a>
+					<div class="article__content--info  content">
+						<h2 class="article--title"><a href="#">Neutralidad de la red</a></h2>
+						<p class="article--autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="article--fecha  pull-right">Hace <strong>20</strong> min</p>
+						<a class="article--tag" href="#">CSS3</a>
 					</div>
 				</div><!--//description-->
-				<div class="actions">
-					<div class="votes">
-						<a class="up" href="#">Up</a>
-						<span class="total">156</span>
-						<a class="down" href="#">Down</a>
+				<div class="article__content--actions">
+					<div class="article__content--votes">
+						<a class="article__content--up" href="#">Up</a>
+						<span class="article__content--total">156</span>
+						<a class="article__content--down" href="#">Down</a>
 					</div>
-					<div class="data pull-right">
-						<a class="comments" href="#">
+					<div class="article__content--data  pull-right">
+						<a class="article__content--comments" href="#">
 							10
 						</a>
 					</div>
 				</div><!--//actions-->
 			</div><!--//articleContent-->
 		</article>
-		<article class="col-md-3 col-sm-6">
-			<div class="articleContent">
-				<div class="description">
+
+		<article class="article  col-md-3  col-sm-6">
+			<div class="article__content">
+				<div class="article__content--description">
 					<figure>
 						<a href="#"><img src="imgs/foto.jpg" /></a>
 					</figure>
-					<div class="content">
-						<h2><a href="#">Neutralidad de la red</a></h2>
-						<p class="autor">Por <a href="#">Diana Reyes</a></p>
-						<p class="fecha pull-right">Hace <strong>20</strong> min</p>
-						<a class="tag" href="#">CSS3</a>
+					<div class="article__content--info  content">
+						<h2 class="article--title"><a href="#">Neutralidad de la red</a></h2>
+						<p class="article--autor">Por <a href="#">Diana Reyes</a></p>
+						<p class="article--fecha  pull-right">Hace <strong>20</strong> min</p>
+						<a class="article--tag" href="#">CSS3</a>
 					</div>
 				</div><!--//description-->
-				<div class="actions">
-					<div class="votes">
-						<a class="up" href="#">Up</a>
-						<span class="total">156</span>
-						<a class="down" href="#">Down</a>
+				<div class="article__content--actions">
+					<div class="article__content--votes">
+						<a class="article__content--up" href="#">Up</a>
+						<span class="article__content--total">156</span>
+						<a class="article__content--down" href="#">Down</a>
 					</div>
-					<div class="data pull-right">
-						<a class="comments" href="#">
+					<div class="article__content--data  pull-right">
+						<a class="article__content--comments" href="#">
 							10
 						</a>
 					</div>
 				</div><!--//actions-->
 			</div><!--//articleContent-->
 		</article>
+
+
+
+
 	</section>
+
 	<footer>
 		Powered by Tesokdesign.es 2015
 	</footer>
