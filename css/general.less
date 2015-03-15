@@ -29,6 +29,17 @@
 #contentPadding(@var){
 	padding: @var;
 }
+#buttons{
+	  background-color: rgb(241, 191, 15);
+	  border-bottom: solid 3px rgb(169, 136, 16);
+	  border-bottom-left-radius: 5px;
+	  border-bottom-right-radius: 0;
+	  color: rgb(255, 255, 255);
+	  font-size: 10px;
+	  padding: .5em 1.6em .5em .7em;
+	  text-decoration: none;
+	  text-transform: uppercase;
+}
 
 /*
 ############################################################
@@ -63,8 +74,12 @@ HEADER
 .header__content--image{
 	a{
 		padding-right: 1em;
-		img{
+		.header__content--logo{
 			width: 40px;
+			transition:0.5s ease;
+			&:hover{
+				transform: rotate(360deg);
+			}
 		}
 	}
 }
@@ -78,25 +93,17 @@ TITULAR
 		font-size: 1em;
 		font-weight: normal;
 		margin-bottom: 0;
-		margin-top: 9px;
+		margin-top: 13px;
 		text-transform: none;
 		strong{
 			text-transform: uppercase;
 		}
 	}
 	.header__content--publish{
-		background-color: @amarilloBtn;
-		border-bottom: solid 3px @amarilloSombra;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 0px;
-		color: white;
-		font-size: 10px;
-		padding: 0.5em 1.6em 0.5em 0.7em;
+		#buttons();
 		position: absolute;
 		right: 70px;
-		text-decoration: none;
-		text-transform: uppercase;
-		top: 26px;
+		top: 23px;
 	}
 }	
 /*###############################
@@ -177,11 +184,33 @@ FORM
 ############################################################
 ############################################################
 */
-.addPost{
+.form{
 	display: none;
-	#contentPadding(1em);
-	.addPost__label{
+	overflow: auto;
+	/*#contentPadding(1em);*/
+	padding-top: 25px;
+	padding-bottom: 0px;
+	.form__label{
 		width: 60px;
+	}
+	.form__lines{
+		display: flex;
+		input{
+			flex-basis: 100%;
+			padding-left: 10px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-radius: 3px;
+			border: solid 1px @grisOscuro;
+		}
+		input[type="submit"]{
+			  #buttons();
+			  border-top: 0;
+			  border-left: 0;
+			  border-right: 0;
+			  margin-top: 10px;
+			  font-size: 13px;
+		}
 	}
 }
 /*

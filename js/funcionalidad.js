@@ -1,8 +1,17 @@
 // On load
 $(function(){
+	// Get list of post
+	list = $(".section");
+	// Get first post
+	post = $(".article").first();
+	/*
+	#####################################
+	EVENTES
+	#####################################
+	*/
 	// Open/Close form
-	$("#js-publish").on("click", viewform);
-	$("#js-addPost").on("submit", processForm);
+	$("#js-publish").click(viewform);
+	$("#js-form").on("submit", addpost);
 });
 /*
 #####################################
@@ -11,16 +20,25 @@ FUNCTIONS
 */
 // Open/Close form to publish Post
 function viewform(){
-	$("#js-addPost").slideToggle();
+	$("#js-form").slideToggle();
 }
-// Process form
-function processForm(event){
-	// Stop default event
-	event.preventDefault();
-	// Get form info
-	var titulo=$("#titulo").val();
-	var autor=$("#autor").val();
-	var tag=$("#tag").val();
-	// View info in console
-	console.log(titulo,titulo,tag);
+// Add Post to html
+function addpost(){
+	var titulo = $("#js-titulo").val(),
+		autor = $("#js-autor").val(),
+		tag = $("#js-tag").val(),
+		clone = post.clone();
+
+	clone.find(".article--title a")
+		.text(titulo);
+			/*.attr("href", url)*/
+	clone.find(".article--autor a")
+			.text(autor);
+	clone.find(".article--tag")
+			.text(tag);
+	clone.hide();
+	list.prepend(clone);
+	clone.fadeIn();
+	
+	return false;
 }
